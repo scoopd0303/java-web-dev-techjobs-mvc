@@ -27,5 +27,69 @@
         </div>
     </div>
 
+    <th:block th:fragment="job-table">
+        <table class="table job-listing">
+
+            <tr th:each="job : ${jobs}">
+                <td>
+
+                    <label>ID:
+                        <em>
+                                <span style="font-weight:normal;"
+                                      th:text="${job.id}">
+                                </span>
+                        </em>
+                    </label><br>
+
+
+                    <label>Name:
+                        <em>
+                                <span style="font-weight:normal;"
+                                      th:text="${job.name}">
+                                </span>
+                        </em>
+                    </label><br>
+
+                    <label>Employer:
+                        <em>
+                            <a style="font-weight:normal;"
+                               th:href="@{/list/jobs(column='employer',value=${job.employer})}"
+                               th:text="${job.employer}">
+                            </a>
+                        </em>
+                    </label><br>
+
+                    <label>Location:
+                        <em>
+                            <a style="font-weight:normal;"
+                               th:href="@{/list/jobs(column='location',value=${job.location})}"
+                               th:text="${job.location}">
+                            </a>
+                        </em>
+                    </label><br>
+
+                    <label>Position Type:
+                        <em>
+                            <a style="font-weight:normal;"
+                               th:href="@{/list/jobs(column='positionType',value=${job.positionType})}"
+                               th:text="${job.positionType}">
+                            </a>
+                        </em>
+                    </label><br>
+
+                    <label>Skill:
+                        <em>
+                            <a style="font-weight:normal;"
+                               th:href="@{/list/jobs(column='coreCompetency',value=${job.coreCompetency})}"
+                               th:text="${job.coreCompetency}">
+                            </a>
+                        </em>
+                    </label>
+
+                </td>
+            </tr>
+        </table>
+    </th:block>
+
 </body>
 </html>

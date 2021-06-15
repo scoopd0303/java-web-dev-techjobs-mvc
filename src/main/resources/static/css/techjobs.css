@@ -29,10 +29,16 @@ table.job-listing {
     width: 80%;
 }
 
+
 table.job-listing td:first-child {
     font-weight: bold;
 }
 
+/*
+table.job-listing td .field {
+    font-weight: bold;
+}
+*/
 table.job-listing td:last-child {
     width: 80%;
 }
