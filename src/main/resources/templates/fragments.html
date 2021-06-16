@@ -19,9 +19,8 @@
                 <a th:href="@{/}" class="navbar-brand">TechJobs</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a th:href="@{/search}">Search</a></li>
-                    <li><a th:href="@{/list}">List</a></li>
+                <ul th:each="action : ${actions}" class="nav navbar-nav">
+                    <li><a th:href="@{'/' + ${action.key}}" th:text="${action.value}"></a></li>
                 </ul>
             </div>
         </div>
@@ -35,18 +34,18 @@
 
                     <label>ID:
                         <em>
-                                <span style="font-weight:normal;"
-                                      th:text="${job.id}">
-                                </span>
+                            <span style="font-weight:normal;"
+                                  th:text="${job.id}">
+                            </span>
                         </em>
                     </label><br>
 
 
                     <label>Name:
                         <em>
-                                <span style="font-weight:normal;"
-                                      th:text="${job.name}">
-                                </span>
+                            <span style="font-weight:normal;"
+                                  th:text="${job.name}">
+                            </span>
                         </em>
                     </label><br>
 
